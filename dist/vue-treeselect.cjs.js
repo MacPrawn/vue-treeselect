@@ -1280,8 +1280,15 @@ var instanceId = 0;
       this.getInput().blur();
     },
     handleMouseDown: onLeftClick(function handleMouseDown(evt) {
+      console.log({
+        evt: evt
+      });
+      evt.preventDefault();
       if (this.disabled) return;
       var isClickedOnValueContainer = this.getValueContainer().$el.contains(evt.target);
+      console.log({
+        isClickedOnValueContainer: isClickedOnValueContainer
+      });
 
       if (isClickedOnValueContainer && !this.menu.isOpen && (this.openOnClick || this.trigger.isFocused)) {
         this.openMenu();
