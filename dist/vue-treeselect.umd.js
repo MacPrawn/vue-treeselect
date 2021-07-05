@@ -2480,11 +2480,6 @@ var instanceId = 0;
       this.getInput().blur();
     },
     handleMouseDown: onLeftClick(function handleMouseDown(evt) {
-      console.log({
-        target: evt.target,
-        name: evt.target.tagName
-      });
-
       if (evt.target && evt.target.tagName && !evt.target.tagName.match(/^(select)$/i)) {
         evt.preventDefault();
         evt.stopPropagation();

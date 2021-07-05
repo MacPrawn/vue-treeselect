@@ -1164,7 +1164,6 @@ export default {
     },
 
     handleMouseDown: onLeftClick(function handleMouseDown(evt) {
-      console.log({ target: evt.target, name: evt.target.tagName }) // eslint-disable-line no-console
       if (evt.target && evt.target.tagName && !evt.target.tagName.match(/^(select)$/i)) {
         evt.preventDefault()
         evt.stopPropagation()
