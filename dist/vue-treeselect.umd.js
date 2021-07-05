@@ -2480,8 +2480,6 @@ var instanceId = 0;
       this.getInput().blur();
     },
     handleMouseDown: onLeftClick(function handleMouseDown(evt) {
-      evt.preventDefault();
-      evt.stopPropagation();
       if (this.disabled) return;
       var isClickedOnValueContainer = this.getValueContainer().$el.contains(evt.target);
 

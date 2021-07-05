@@ -182,7 +182,6 @@
   padding-left: 5px;
 }
 .vue-treeselect__multi-value-item {
-  cursor: pointer;
   display: inline-table;
   background: #e3f2fd;
   padding: 2px 0;
@@ -221,6 +220,7 @@
   vertical-align: middle;
 }
 .vue-treeselect__value-remove {
+  cursor: pointer;
   color: #039be5;
   padding-left: 5px;
   border-left: 1px solid #fff;

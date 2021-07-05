@@ -458,8 +458,6 @@
 }
 
 .vue-treeselect__multi-value-item {
-  .clickable();
-
   display: inline-table;
   background: @treeselect-multi-value-item-bg;
   // Table elements do not have margin, so we set at the container element.
@@ -508,6 +506,8 @@
 }
 
 .vue-treeselect__value-remove {
+  .clickable();
+
   color: @treeselect-multi-value-remove-color;
   padding-left: @treeselect-multi-value-padding-x;
   border-left: 1px solid @treeselect-multi-value-divider-color;

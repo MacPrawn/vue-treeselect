@@ -1164,8 +1164,8 @@ export default {
     },
 
     handleMouseDown: onLeftClick(function handleMouseDown(evt) {
-      evt.preventDefault()
-      evt.stopPropagation()
+      // evt.preventDefault()
+      // evt.stopPropagation()
 
       if (this.disabled) return
 
