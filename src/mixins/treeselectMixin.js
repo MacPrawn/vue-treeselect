@@ -1164,14 +1164,15 @@ export default {
     },
 
     handleMouseDown: onLeftClick(function handleMouseDown(evt) {
-      console.log({ evt }) // eslint-disable-line no-console
-      evt.preventDefault()
-      // evt.stopPropagation()
+      console.log({ target: evt.target, name: evt.target.tagName }) // eslint-disable-line no-console
+      if (evt.target && evt.target.tagName && !evt.target.tagName.match(/^(select)$/i)) {
+        evt.preventDefault()
+        evt.stopPropagation()
+      }
 
       if (this.disabled) return
 
       const isClickedOnValueContainer = this.getValueContainer().$el.contains(evt.target)
-      console.log({ isClickedOnValueContainer }) // eslint-disable-line no-console
       if (isClickedOnValueContainer && !this.menu.isOpen && (this.openOnClick || this.trigger.isFocused)) {
         this.openMenu()
       }

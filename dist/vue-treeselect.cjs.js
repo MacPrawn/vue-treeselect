@@ -1281,14 +1281,17 @@ var instanceId = 0;
     },
     handleMouseDown: onLeftClick(function handleMouseDown(evt) {
       console.log({
-        evt: evt
+        target: evt.target,
+        name: evt.target.tagName
       });
-      evt.preventDefault();
+
+      if (evt.target && evt.target.tagName && !evt.target.tagName.match(/^(select)$/i)) {
+        evt.preventDefault();
+        evt.stopPropagation();
+      }
+
       if (this.disabled) return;
       var isClickedOnValueContainer = this.getValueContainer().$el.contains(evt.target);
-      console.log({
-        isClickedOnValueContainer: isClickedOnValueContainer
-      });
 
       if (isClickedOnValueContainer && !this.menu.isOpen && (this.openOnClick || this.trigger.isFocused)) {
         this.openMenu();
